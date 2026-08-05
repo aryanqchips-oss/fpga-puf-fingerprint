@@ -1,0 +1,18 @@
+
+module ro_selector(
+    input [4:0] challenge, 
+    input [63:0] ro,
+    output ro1,ro2
+    );
+    
+    wire [31:0] roset1;
+    wire [31:0] roset2;
+    
+    
+   assign  roset1=ro[31:0];
+   assign  roset2=ro[63:32];
+   
+   assign ro1=roset1[challenge];
+   assign ro2=roset2[challenge];
+    
+endmodule
